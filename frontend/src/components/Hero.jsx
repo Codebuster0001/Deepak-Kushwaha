@@ -5,10 +5,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center h-screen bg-black text-white mt-8"
+      className="relative flex items-center justify-center h-screen bg-black text-white mt-8 "
     >
       <motion.div
-        className="text-center z-7"
+        className="text-center z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut" }}

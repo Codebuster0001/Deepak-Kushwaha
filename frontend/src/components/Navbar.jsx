@@ -31,8 +31,13 @@ const NavAnimations = {
   exit: {
     y: -50,
     opacity: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
   },
 };
+
 
 export default function Navbar() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -84,7 +89,7 @@ export default function Navbar() {
 
 function NavbarFixed({ isMenuOpen, toggleMenu, links }) {
   return (
-    <nav className="fixed z-10 flex justify-between w-full px-8 py-6 top-0 bg-black text-white">
+    <nav className="fixed z-20 flex justify-between w-full px-8 py-6 top-0 bg-black text-white">
       <div className="flex items-center lg:px-5 gap-2 text-white">
         <span className="text-xl text-white font-bold">Deepak Kushwaha</span>
       </div>
@@ -112,7 +117,7 @@ function NavbarFixed({ isMenuOpen, toggleMenu, links }) {
         </button>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-black text-white shadow-lg p-3 z-20">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-black text-white shadow-lg p-3 z-40">
           <ul className="flex flex-col items-center w-full p-2 text-white">
             {links.map((link, index) => (
               <li key={index} className="text-center w-full px-4 py-2 text-md">
@@ -135,7 +140,7 @@ function NavbarScroll() {
       animate="animate"
       exit="exit"
       variants={NavAnimations}
-      className="fixed z-10 flex justify-between px-4 py-2 bg-black text-white rounded-full left-1/2 top-5 transform -translate-x-1/2"
+      className="fixed z-20 flex justify-between px-4 py-2 bg-black text-white rounded-full left-1/2 top-5 transform -translate-x-1/2"
     >
      <ul className="flex items-center">
   {links.map((link, index) => (
